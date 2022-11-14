@@ -1,0 +1,90 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+header{
+  position: fixed;
+  width: 100%;
+  height: 120px;
+  top: 0;
+  left: 0;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container{
+  padding: 2% 7%;
+  background: #F9F6EE;
+}
+
+.container .logo h1{
+  color: blue;
+  font-weight: bolder;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.container .logo span{
+  font-size: 70px;
+  vertical-align:middle;
+}
+
+.container .nav a{
+  color: #dde26a;
+  font-size: 23px;
+  padding: 0 20px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.container input{
+  display: none;
+}
+
+.container label{
+  visibility: hidden;
+  opacity: 0;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+.container label{
+  font-size: 40px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.container .nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+.container .nav a{
+  display: block;
+  margin: 15px 30px;
+  padding: 15px;
+  background: #728C69;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-left: 5px solid red;
+}
+
+.container input:checked ~ .nav{
+  transform: scaleY(1);
+  opacity: 1;
+}
+}
